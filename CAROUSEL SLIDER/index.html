@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>product slider</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='car.js'></script>
+
+</head>
+<body>
+    <h1>PRODUCT SLIDER</h1>
+    <main>
+        <div class="slider-container">
+            <img src="./img/right black arr.png" alt="left" id="slide-left" class="arrow">
+            <section class="container" id="slider">
+                <div class="thumbnail">
+                    <img src="./img/watch.jpg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="./img/highhill.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="./img/black shoe.jpg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="./img/polo.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/two shows.jpg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/image1.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/image2.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/image3.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>
+                <div class="thumbnail">
+                    <img src="./img/image4.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/image5.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/image6.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>          <div class="thumbnail">
+                    <img src="./img/image7.jpeg" alt="">
+                    <div class="product-details">
+                        <h2>Demo Product</h2>
+                        <p><span>$39.99</span>$29.99</p>
+                        <a href="#">Add to cart</a>
+                    </div>
+                </div>
+            </section>
+            <img src="./img/right black arr.png" alt="right" id="slide-right" class="arrow">
+
+        </div>
+    </main>
+<script>
+    // // VARIABLES    
+let thumbnails = document.getElementsByClassName("thumbnail");
+let slider = document.getElementById("slider");
+let buttonRight = document.getElementById("slide-right");
+let buttonLeft = document.getElementById("slide-left");
+
+buttonLeft.addEventListener("click", () => {
+    slider.scrollLeft -= 125;
+})
+
+buttonRight.addEventListener("click", () => {
+    slider.scrollLeft += 125;
+})
+const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+// alert(maxScrollLeft);
+
+// AUTOPLAY SLIDER
+
+function autoPlay() {
+    if (slider.scrollLeft > (maxScrollLeft - 1)) {
+        slider.scrollLeft -= maxScrollLeft;
+    }
+    else {
+        slider.scrollLeft += 1;
+    }
+}
+let play = setInterval(autoPlay, 50);
+
+//  PAUSE THE SLIDER ON HOVER
+for (let i=0; i < thumbnails.length; i++) {
+    thumbnails[i].addEventListener("mouseover", () => {
+       clearInterval(play)
+    })
+    thumbnails[i].addEventListener("mouseout", () => {
+    return play = setInterval(autoPlay, 50);
+    })
+    
+}
+</script>
+</body>
+</html>

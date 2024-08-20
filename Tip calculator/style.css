@@ -1,0 +1,131 @@
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  ---grey: #eee;
+  --dark-grey: #222831;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+img {
+  width: 100%;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* section */
+section {
+  height: 100vh;
+  background-color: var(--light-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calc {
+  width: 40rem;
+  background-color: white;
+}
+h2 {
+  font-size: 4rem;
+  /* color: white; */
+  background-color: var(--color-sec);
+  text-align: center;
+  padding: 1rem;
+}
+form,
+form > * {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--color-primary);
+}
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+input,
+select {
+  font-size: 1.6rem;
+  padding: 7px;
+  width: 20rem;
+  text-align: right;
+}
+ .rate {
+  text-align: left;
+}
+
+option:not(:checked) {
+  background-color: var(--color-primary);
+}
+option:checked {
+  background-color: var(--color-sec);
+}
+option:hover {
+  background-color: var(--color-primary);
+}
+option:target::before {
+  background-color: var(--color-sec);
+}
+.btn-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn {
+  width: 100%;
+  height: 5rem;
+  font-size: 2rem;
+  margin: 5px 0;
+  background-color: var(--color-primary);
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--color-sec);
+  transition: .3s;
+}
+.error {
+  color: red;
+  display: none;
+}
+.result {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.result > * {
+  background-color: var(---grey);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+.total {
+  color: red;
+}
